@@ -7,7 +7,7 @@ format:
     includes:
       in-header: |
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-    theme: simple
+    theme: default
     css: style.css
     slide-number: true
     transition: slide
@@ -291,4 +291,5 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ## This is what the form will look like
 
-![](figs/ebm_form.png){fig-align="center" width="400px"}
+![](figs/ebm_form.png){width=50% fig-align="center"}
+
