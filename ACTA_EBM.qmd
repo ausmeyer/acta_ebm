@@ -4,6 +4,9 @@ author: "Austin Meyer, MD, PhD, MS, MPH, MS, FAAP"
 date: "2024-09-24"
 format: 
   revealjs:
+    includes:
+      in-header: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     theme: simple
     css: style.css
     slide-number: true
