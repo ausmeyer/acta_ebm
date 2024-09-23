@@ -99,6 +99,7 @@ evidence based medicine changes anything?*
 ---
 
 ## Students’ Perspective on EBM Teaching in WBAs
+
 - **Positive Reception**: A systematic review found that students generally have a positive perception of learning EBM through practical applications.
 - **Increased Engagement**: WBAs make EBM more engaging as students actively formulate clinical questions and apply evidence to real patients.
 - **Improved Skills**: Evidence shows improved critical thinking and decision-making skills when students are assessed via WBAs that integrate EBM principles.
@@ -244,7 +245,8 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ## GRADE to assess risk of bias
 
-![](figs/grade.png){fig-align="center"}
+![](figs/grade.png){fig-align="center" width="500px"}
+
 [GRADE Assessment Training from Cochrane](https://training.cochrane.org/grade-approach)
 
 ---
@@ -261,5 +263,5 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ## CASP for critical appraisal
 
-![](figs/casp.png){fig-align="center"}
+![](figs/casp.png){fig-align="center" width="500px"}
 [CASP checklists for critically appraising an article](https://casp-uk.net/casp-tools-checklists)
