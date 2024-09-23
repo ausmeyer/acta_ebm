@@ -263,5 +263,6 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ## CASP for critical appraisal
 
-![](figs/casp.png){fig-align="center" width="500px"}
+![](figs/casp.png){fig-align="center" width="800px"}
+
 [CASP checklists for critically appraising an article](https://casp-uk.net/casp-tools-checklists)
