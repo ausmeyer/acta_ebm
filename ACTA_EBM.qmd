@@ -291,5 +291,8 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ## This is what the form will look like
 
-![](figs/ebm_form.png){width=50% fig-align="center"}
+![](figs/ebm_form.png){width="500px" fig-align="center"}
 
+---
+
+The End
