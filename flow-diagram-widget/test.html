@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Flow Diagram Widget</title>
+    <style>
+        /* Basic styling for the container */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        #study-design-flow {
+            width: 100%;
+            height: 100%;
+            max-width: 1200px;
+            max-height: 800px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="study-design-flow"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reactflow@11.11.4/dist/umd/index.min.js"></script>
+    <script src="dist/widget.js"></script>
+    <script>
+    StudyDesignFlowWidget.initStudyDesignFlowWidget(document.getElementById('study-design-flow'));
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,46 @@
+.reveal .slides {
+  font-size: 28px;
+}
+
+.reveal h1 {
+  font-size: 2.2em;
+  color: #005b96;
+}
+
+.reveal h2 {
+  font-size: 1.8em;
+  color: #005b96;
+  margin-bottom: 0.3em;
+}
+
+.reveal h3 {
+  margin-bottom: 0.5em;
+}
+
+.reveal .slide-number {
+  font-size: 0.5em;
+}
+
+/* Title slide specific styles */
+.title-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.title-slide h1 {
+  font-size: 2.5em !important;
+  margin-bottom: 0.2em !important;
+}
+
+.title-slide h2 {
+  font-size: 1.3em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.title-slide h3 {
+  font-size: 1em !important;
+  margin-bottom: 0.2em !important;
+}

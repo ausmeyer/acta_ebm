@@ -1,0 +1,262 @@
+---
+title: "Introducing Evidence-Based Medicine as a Workplace-Based Assessment"
+author: "Austin Meyer, MD, PhD, MS, MPH, MS, FAAP"
+date: "2024-09-24"
+format: 
+  revealjs:
+    theme: simple
+    css: style.css
+    slide-number: true
+    transition: slide
+    incremental: true
+    toc: false
+    self-contained: true
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+# Overview
+
+1. Motivating EBM as a Workplace-Based Assessment
+2. Enhancing the Quality of Medical Students' EBM Presentations
+3. Effective Evaluation and Feedback Techniques for EBM Presentations
+
+---
+
+# Motivating EBM was a WBA
+
+---
+
+## WBAs as a Bridge Between Theory and Practice
+
+- Traditional classroom-based EBM teaching often fails to translate into clinical skills.
+- WBAs enable students to **apply EBM** in real-time, working with actual patients.
+- Integration of EBM into WBAs provides a **continuous learning process**, improving knowledge retention and clinical decision-making. 
+
+\n\n\n\n\n\n\n\n
+- **Reference**: Coomarasamy & Khan (2004): *What is the evidence that postgraduate teaching in
+evidence based medicine changes anything?*
+
+---
+
+## Utilizing Case-Based Learning to Apply EBM
+
+- **Benefits:**
+  - Enhances critical thinking and decision-making skills.
+  - Bridges the gap between theory and clinical practice.
+  - Fosters teamwork and communication among learners.
+- Case-based learning significantly improves EBM knowledge and application. 
+
+\n\n\n\n\n\n\n\n
+- **Reference**: Young T, Rohwer A, Volmink J, Clarke M. *What are the effects of teaching evidence-based health care (EBHC)? Overview of systematic reviews.*
+
+---
+
+## Benefits of Clinical Integration of EBM through WBAs
+
+- **Increases clinical relevance**: Students apply PICO questions directly related to patient care.
+- **Improves retention**: WBAs reinforce the application of EBM principles in real clinical scenarios, improving retention compared to standalone methods.
+- **Enhances behavior**: Clinically integrated WBAs lead to better behavior change, such as literature review habits and evidence application.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: Coomarasamy & Khan (2004): *What is the evidence that postgraduate teaching in
+evidence based medicine changes anything?*
+
+---
+
+## Essential Components of EBM in WBAs
+
+- **Problem Formulation**: Students develop clinically relevant PICO questions during rounds.
+- **Critical Appraisal**: Students assess literature for relevance and validity directly in patient care scenarios.
+- **Application**: EBM findings are immediately applied to patient management, bridging theory and practice.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: Kasai et al. (2024): *Effect of a workplace-based learning program on clerkship students’ behaviors and attitudes toward evidence-based medicine practice.*
+
+---
+
+## Structured Feedback and Reflection in WBAs
+
+- **Structured Feedback**: Feedback on EBM presentations helps students refine their skills and improve their understanding of clinical applicability.
+- **Reflection**: Encouraging students to reflect on their EBM processes reinforces continuous learning and helps integrate evidence into future patient care.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: Kasai et al. (2024): *Effect of a workplace-based learning program on clerkship students’ behaviors and attitudes toward evidence-based medicine practice.*
+
+---
+
+## Challenges in Implementing EBM as a WBA
+
+- **Time Constraints**: Faculty often struggle to integrate EBM teaching into busy clinical schedules.
+- **Varying Student (and faculty) Preparedness**: Differences in prior EBM knowledge can impact the effectiveness.
+- **Sustaining Long-Term Behavior Change**: EBM behavior may diminish over time without continuous reinforcement.
+
+---
+
+## Students’ Perspective on EBM Teaching in WBAs
+- **Positive Reception**: A systematic review found that students generally have a positive perception of learning EBM through practical applications.
+- **Increased Engagement**: WBAs make EBM more engaging as students actively formulate clinical questions and apply evidence to real patients.
+- **Improved Skills**: Evidence shows improved critical thinking and decision-making skills when students are assessed via WBAs that integrate EBM principles.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *Effectiveness of Teaching Evidence-Based Medicine to Undergraduate Medical Students: A BEME Systematic Review* (2024).
+
+---
+
+# Enhancing the Quality of Medical Students' EBM Presentations
+
+--- 
+
+## Importance of Asking Answerable Questions
+
+- **EBM Foundation**: The first step in EBM is formulating clear, answerable clinical questions using the PICO framework (Patient, Intervention, Comparison, Outcome).
+- **Types of Questions**: 
+  - Background: General knowledge about a condition or intervention.
+  - Foreground: Specific knowledge to inform clinical decisions (PICO format).
+
+- Example:
+  - P: Patient with hypertension, I: Lifestyle changes, C: Medication, O: Blood pressure reduction.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *How to Practice and Teach EBM*: Asking answerable questions is a crucial skill in EBM (Chapter 1).
+
+---
+
+## Teaching Strategies for Asking Better Questions
+
+- **Role Modeling**: Faculty should demonstrate the process of turning clinical uncertainty into answerable questions during rounds.
+- **Interactive Methods**: Group activities where students formulate and refine clinical questions with peer and mentor feedback.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *How to Practice and Teach EBM* (Chapter 1): Role modeling and interactive teaching enhance question formulation skills.
+
+---
+
+## Acquiring the Best Evidence for EBM
+
+- **Key Resources**: Teach students how to efficiently use preappraised sources (e.g., Cochrane, UpToDate) for quick evidence retrieval.
+- **Search Strategies**: Focus on systematic and strategic search techniques (e.g., using Boolean operators, medical subject headings (MeSH)) to find relevant studies.
+- **Understanding Study Hierarchy**: Would prefer studies with inherently lower risk of bias.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *How to Practice and Teach EBM* (Chapter 2): Effective use of evidence sources is critical to successful EBM presentations.
+
+---
+
+## Appraising Evidence: Levels of Evidence
+
+```{r evidence_pyramid, echo=FALSE, fig.width=9, fig.height=6, fig.align='center'}
+library(ggplot2)
+
+# Define levels of evidence
+levels <- c("Systematic Reviews", 
+            "Randomized Controlled Trials", 
+            "Cohort Studies", 
+            "Case-Control Studies", 
+            "Expert Opinion")
+
+# Create a data frame for the pyramid
+df <- data.frame(
+  Level = factor(levels, levels = rev(levels)),
+  Value = 5:1,
+  ymin = c(4, 3, 2, 1, 0),
+  ymax = c(4.5, 5.5, 6.5, 7.5, 8.5)
+)
+
+# Define a custom color palette (from darker to lighter blue)
+blue_palette <- rev(c("#4A97D5", "#6FAEE0", "#94C5EA", "#B9DCF5", "#E6F3FF"))
+
+# Create the pyramid plot
+ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Level)) +
+  geom_rect() +
+  coord_flip() +
+  scale_fill_manual(values = blue_palette) +  # Use custom color palette
+  scale_y_continuous(breaks = 1:5, labels = NULL, expand = c(0, 0)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 5), labels = NULL) +
+  theme_minimal() +
+  theme(
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    legend.position = "none",
+    panel.grid = element_blank(),
+    plot.margin = margin(10, 10, 10, 10)
+  ) +
+  geom_text(
+    aes(x = Value - 0.5, y = (ymin + ymax) / 2, label = Level),
+    hjust = 0.5, vjust = 0.5, size = 5, color = "black"
+  )
+```
+
+---
+
+## Teaching the Evidence Search Process
+
+- **Educational Prescriptions**: Assign students clinical questions and guide them through the search process to find answers.
+- **Practical Exercises**: Incorporate case-based learning where students are required to locate and appraise evidence for their cases.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *How to Practice and Teach EBM* (Chapter 2): Effective teaching involves guiding students through the evidence search process.
+
+---
+
+## Appraising Evidence for EBM Presentations
+
+- **Critical Appraisal**: Teach students how to evaluate the validity, relevance, and applicability of research.
+- **Key Appraisal Criteria**:
+  - **Study Design**: experimental vs. observational studies.
+  - **Bias Assessment**: How to detect selection bias, performance bias, and publication bias.
+  - **Strength of Evidence**: Use established tools like GRADE to assess evidence quality.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *How to Practice and Teach EBM* (Chapter 3): Critical appraisal is essential for applying evidence effectively.
+
+---
+
+## Understanding study type and its analysis
+
+```{=html}
+<div id="study-design-flow"></div>
+<link href="https://unpkg.com/reactflow@11.11.4/dist/style.css" rel="stylesheet" />
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reactflow@11.11.4/dist/umd/index.min.js"></script>
+<script src="flow-diagram-widget/dist/widget.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof StudyDesignFlowWidget !== 'undefined' &&
+        typeof StudyDesignFlowWidget.initStudyDesignFlowWidget === 'function') {
+      StudyDesignFlowWidget.initStudyDesignFlowWidget(document.getElementById('study-design-flow'));
+    } else {
+      console.error('StudyDesignFlowWidget not found or initialization function not available');
+      document.getElementById('study-design-flow').innerHTML = 'Error loading widget';
+    }
+  });
+</script>
+```
+
+---
+
+## GRADE to assess risk of bias
+
+![](figs/grade.png){fig-align="center"}
+[GRADE Assessment Training from Cochrane](https://training.cochrane.org/grade-approach)
+
+---
+
+## Enhancing Students’ Appraisal Skills
+
+- **Group Appraisal Sessions**: Encourage group discussions and collaborative appraisal to improve skills.
+- **Use of Checklists**: Introduce students to critical appraisal checklists (e.g., CASP, CONSORT) to structure their evaluations.
+
+\n\n\n\n\n\n\n\n
+- **Reference**: *How to Practice and Teach EBM* (Chapter 3): Collaborative appraisal improves students’ understanding and application of evidence.
+
+---
+
+## CASP for critical appraisal
+
+![](figs/casp.png){fig-align="center"}
+[CASP checklists for critically appraising an article](https://casp-uk.net/casp-tools-checklists)
