@@ -288,9 +288,9 @@ evidence based medicine changes anything?*
 
 ## Utilizing Case-Based Learning to Apply EBM
 
-- Enhances critical thinking and decision-making skills.
-- Fosters teamwork and communication among learners.
-- Case-based learning significantly improves EBM knowledge and application. 
+- **Enhances critical thinking** and decision-making skills.
+- **Fosters teamwork** and communication among learners.
+- Case-based learning significantly **improves EBM knowledge** and application. 
 
 \n\n\n\n\n\n\n\n
 - **Reference**: Young T, Rohwer A, Volmink J, Clarke M. *What are the effects of teaching evidence-based health care (EBHC)? Overview of systematic reviews.*
@@ -320,7 +320,7 @@ evidence based medicine changes anything?*
 
 ## Students’ Perspective on EBM Teaching in WBAs
 
-- **Positive Reception**: A systematic review found that students generally have a positive perception of learning EBM through practical applications.
+- **Positive Reception**: Students generally have a positive perception of learning EBM through practical applications.
 - **Increased Engagement**: WBAs make EBM more engaging as students actively formulate clinical questions and apply evidence to real patients.
 - **Improved Skills**: Evidence shows improved critical thinking and decision-making skills when students are assessed via WBAs that integrate EBM principles.
 
