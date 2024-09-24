@@ -80,6 +80,11 @@
       top: 30%;
       left: 40%;
     }
+    
+    .fly-image:nth-child(9) {
+      top: 30%;
+      left: 40%;
+    }
 
     /* Class to trigger fly-in */
     .fly-in {
@@ -99,6 +104,7 @@
     <img src="figs/s6.png" alt="Image 6" class="fly-image">
     <img src="figs/s7.png" alt="Image 7" class="fly-image">
     <img src="figs/s8.png" alt="Image 8" class="fly-image">
+    <img src="figs/s8.png" alt="Image 9" class="fly-image">
   </div>
 
   <script>
@@ -108,14 +114,15 @@
 
       // Define possible directions with their corresponding translate multipliers
       const directions = [
-        { x: -10, y: 0 },    // Left
-        { x: 10, y: 0 },     // Right
-        { x: 0, y: -10 },    // Top
-        { x: 0, y: 10 },     // Bottom
-        { x: -10, y: -5 }, // Top-Left
-        { x: 0, y: 0 },  // Top-Right
-        { x: -10, y: 5 },  // Bottom-Left
-        { x: 5, y: 10 }    // Bottom-Right
+        { x: -10, y: 0 },   
+        { x: 10, y: 0 },     
+        { x: 0, y: -10 },    
+        { x: 0, y: 10 },     
+        { x: -10, y: -5 }, 
+        { x: 0, y: 0 },  
+        { x: -10, y: 5 },  
+        { x: 5, y: 10 }    
+        { x: 10, y: 10 }    
       ];
 
       // Store original positions and assigned directions to allow resetting

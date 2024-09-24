@@ -107,6 +107,11 @@ execute:
     }
 
     .fly-image:nth-child(8) {
+      top: 5%;
+      left: 40%;
+    }
+    
+    .fly-image:nth-child(9) {
       top: 30%;
       left: 40%;
     }
@@ -129,6 +134,7 @@ execute:
     <img src="figs/s6.png" alt="Image 6" class="fly-image">
     <img src="figs/s7.png" alt="Image 7" class="fly-image">
     <img src="figs/s8.png" alt="Image 8" class="fly-image">
+    <img src="figs/s9.png" alt="Image 9" class="fly-image">
   </div>
 
   <script>
@@ -475,7 +481,6 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ## Enhancing Students’ Appraisal Skills
 
-- **Group Appraisal Sessions**: Encourage group discussions and collaborative appraisal to improve skills.
 - **Use of Checklists**: Introduce students to critical appraisal checklists (e.g., CASP, CONSORT) to structure their evaluations.
 
 \n\n\n\n\n\n\n\n
