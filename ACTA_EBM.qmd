@@ -108,11 +108,11 @@ execute:
 
     .fly-image:nth-child(8) {
       top: 5%;
-      left: 40%;
+      left: 10%;
     }
     
     .fly-image:nth-child(9) {
-      top: 30%;
+      top: 40%;
       left: 40%;
     }
 
