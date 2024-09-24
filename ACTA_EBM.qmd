@@ -22,7 +22,7 @@ execute:
 
 ## About Me
 
-![](pics.png){fig-align="center"}
+![](figs/pics.png){fig-align="center"}
 ---
 
 ## About my work
@@ -238,6 +238,12 @@ execute:
 
 ---
 
+## If you are interested in EBM
+
+![](figs/ebm_book.png){fig-align="center"}
+
+---
+
 # Overview
 
 1. Motivating EBM as a Workplace-Based Assessment
@@ -262,19 +268,6 @@ evidence based medicine changes anything?*
 
 ---
 
-## Utilizing Case-Based Learning to Apply EBM
-
-- **Benefits:**
-  - Enhances critical thinking and decision-making skills.
-  - Bridges the gap between theory and clinical practice.
-  - Fosters teamwork and communication among learners.
-- Case-based learning significantly improves EBM knowledge and application. 
-
-\n\n\n\n\n\n\n\n
-- **Reference**: Young T, Rohwer A, Volmink J, Clarke M. *What are the effects of teaching evidence-based health care (EBHC)? Overview of systematic reviews.*
-
----
-
 ## Benefits of Clinical Integration of EBM through WBAs
 
 - **Increases clinical relevance**: Students apply PICO questions directly related to patient care.
@@ -284,6 +277,17 @@ evidence based medicine changes anything?*
 \n\n\n\n\n\n\n\n
 - **Reference**: Coomarasamy & Khan (2004): *What is the evidence that postgraduate teaching in
 evidence based medicine changes anything?*
+
+---
+
+## Utilizing Case-Based Learning to Apply EBM
+
+- Enhances critical thinking and decision-making skills.
+- Fosters teamwork and communication among learners.
+- Case-based learning significantly improves EBM knowledge and application. 
+
+\n\n\n\n\n\n\n\n
+- **Reference**: Young T, Rohwer A, Volmink J, Clarke M. *What are the effects of teaching evidence-based health care (EBHC)? Overview of systematic reviews.*
 
 ---
 
@@ -308,14 +312,6 @@ evidence based medicine changes anything?*
 
 ---
 
-## Challenges in Implementing EBM as a WBA
-
-- **Time Constraints**: Faculty often struggle to integrate EBM teaching into busy clinical schedules.
-- **Varying Student (and faculty) Preparedness**: Differences in prior EBM knowledge can impact the effectiveness.
-- **Sustaining Long-Term Behavior Change**: EBM behavior may diminish over time without continuous reinforcement.
-
----
-
 ## Students’ Perspective on EBM Teaching in WBAs
 
 - **Positive Reception**: A systematic review found that students generally have a positive perception of learning EBM through practical applications.
@@ -324,6 +320,14 @@ evidence based medicine changes anything?*
 
 \n\n\n\n\n\n\n\n
 - **Reference**: *Effectiveness of Teaching Evidence-Based Medicine to Undergraduate Medical Students: A BEME Systematic Review* (2024).
+
+---
+
+## Challenges in Implementing EBM as a WBA
+
+- **Time Constraints**: Faculty often struggle to integrate EBM teaching into busy clinical schedules.
+- **Varying Student (and faculty) Preparedness**: Differences in prior EBM knowledge can impact the effectiveness.
+- **Sustaining Long-Term Behavior Change**: EBM behavior may diminish over time without continuous reinforcement.
 
 ---
 
@@ -507,9 +511,15 @@ ggplot(df, aes(xmin = 0, xmax = Value, ymin = ymin-2, ymax = ymax+2, fill = Leve
 
 ---
 
-![](figs/ebm_form.png){width="500px" fig-align="center"}
+## EBM Infographic
 
-### **This is what the form will look like**
+![](figs/EBMInfographic_1.png){fig-align="center"}
+
+---
+
+![](figs/EBMInfographic_2.png){fig-align="center"}
+
+### **This is roughly what the form will look like**
 
 ---
 
