@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sequential Image Fly In from Random Directions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Set body and html to occupy full viewport */
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Prevent scrollbars when images move */
+      background-color: #f0f0f0; /* Optional: background color */
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container to hold images */
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Style for images */
+    .fly-image {
+      position: absolute;
+      width: 500px; /* Adjust size as needed */
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      cursor: pointer;
+      z-index: 10; /* Ensure images are on top */
+      opacity: 0; /* Initially hidden */
+      /* Initially position images off-screen; set via JavaScript */
+    }
+
+    /* Initial positions for demonstration */
+    .fly-image:nth-child(1) {
+      top: 10%;
+      left: 20%;
+    }
+
+    .fly-image:nth-child(2) {
+      top: 30%;
+      left: 70%;
+    }
+
+    .fly-image:nth-child(3) {
+      top: 50%;
+      left: 20%;
+    }
+
+    .fly-image:nth-child(4) {
+      top: 10%;
+      left: 60%;
+    }
+
+    .fly-image:nth-child(5) {
+      top: 60%;
+      left: 60%;
+    }
+
+    .fly-image:nth-child(6) {
+      top: 40%;
+      left: 10%;
+    }
+
+    .fly-image:nth-child(7) {
+      top: 60%;
+      left: 30%;
+    }
+
+    .fly-image:nth-child(8) {
+      top: 30%;
+      left: 40%;
+    }
+
+    /* Class to trigger fly-in */
+    .fly-in {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Eight images as per user request -->
+    <img src="figs/s1.png" alt="Image 1" class="fly-image">
+    <img src="figs/s2.png" alt="Image 2" class="fly-image">
+    <img src="figs/s3.png" alt="Image 3" class="fly-image">
+    <img src="figs/s4.png" alt="Image 4" class="fly-image">
+    <img src="figs/s5.png" alt="Image 5" class="fly-image">
+    <img src="figs/s6.png" alt="Image 6" class="fly-image">
+    <img src="figs/s7.png" alt="Image 7" class="fly-image">
+    <img src="figs/s8.png" alt="Image 8" class="fly-image">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.fly-image');
+      let currentIndex = 0; // To track which image to move next
+
+      // Define possible directions with their corresponding translate multipliers
+      const directions = [
+        { x: -10, y: 0 },    // Left
+        { x: 10, y: 0 },     // Right
+        { x: 0, y: -10 },    // Top
+        { x: 0, y: 10 },     // Bottom
+        { x: -10, y: -5 }, // Top-Left
+        { x: 0, y: 0 },  // Top-Right
+        { x: -10, y: 5 },  // Bottom-Left
+        { x: 5, y: 10 }    // Bottom-Right
+      ];
+
+      // Store original positions and assigned directions to allow resetting
+      const imageData = [];
+
+      images.forEach((image, index) => {
+        // Assign a random direction to each image
+        const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+        imageData.push({
+          originalLeft: parseFloat(window.getComputedStyle(image).left),
+          originalTop: parseFloat(window.getComputedStyle(image).top),
+          direction: randomDirection
+        });
+
+        // Set initial transform based on random direction to position off-screen
+        image.style.transform = `translate(${randomDirection.x}%, ${randomDirection.y}%)`;
+      });
+
+      // Function to fly in a single image
+      function flyInImage(index) {
+        if (index >= images.length) {
+          alert('All images have flown in!');
+          return;
+        }
+
+        const image = images[index];
+        image.classList.add('fly-in'); // Add class to trigger fly-in
+      }
+
+      // Function to reset all images to off-screen positions
+      function flyOutImages() {
+        images.forEach((image, index) => {
+          const direction = imageData[index].direction;
+          image.classList.remove('fly-in'); // Remove fly-in class
+          // Move image back off-screen based on its direction
+          image.style.transform = `translate(${direction.x}%, ${direction.y}%)`;
+        });
+        currentIndex = 0; // Reset the index to allow fly-in again
+      }
+
+      // Listen for keydown events
+      document.addEventListener('keydown', (event) => {
+        // Check if the right arrow key is pressed
+        if (event.key === 'ArrowRight') {
+          flyInImage(currentIndex);
+          currentIndex++;
+        }
+
+        // Reset images when left arrow is pressed
+        if (event.key === 'ArrowLeft') {
+          flyOutImages();
+        }
+      });
+
+      // Make images clickable to fly in individually
+      images.forEach((image, index) => {
+        image.addEventListener('click', () => {
+          // Prevent flying in again if already flown in
+          if (image.classList.contains('fly-in')) return;
+
+          image.classList.add('fly-in'); // Trigger fly-in
+        });
+      });
+
+      // Adjust positions on window resize by resetting images
+      window.addEventListener('resize', () => {
+        flyOutImages();
+      });
+    });
+  </script>
+</body>
+</html>

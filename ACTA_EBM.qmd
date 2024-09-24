@@ -20,6 +20,224 @@ execute:
   message: false
 ---
 
+## About Me
+
+![](pics.png){fig-align="center"}
+---
+
+## About my work
+
+```{=html}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sequential Image Fly In from Random Directions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Set body and html to occupy full viewport */
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Prevent scrollbars when images move */
+      background-color: #f0f0f0; /* Optional: background color */
+      position: relative;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Container to hold images */
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Style for images */
+    .fly-image {
+      position: absolute;
+      width: 300px; /* Adjust size as needed */
+      transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+      cursor: pointer;
+      z-index: 10; /* Ensure images are on top */
+      opacity: 0; /* Initially hidden */
+      /* Initially position images off-screen; set via JavaScript */
+    }
+
+    /* Initial positions for demonstration */
+    .fly-image:nth-child(1) {
+      top: 10%;
+      left: 20%;
+    }
+
+    .fly-image:nth-child(2) {
+      top: 30%;
+      left: 70%;
+    }
+
+    .fly-image:nth-child(3) {
+      top: 50%;
+      left: 20%;
+    }
+
+    .fly-image:nth-child(4) {
+      top: 10%;
+      left: 60%;
+    }
+
+    .fly-image:nth-child(5) {
+      top: 60%;
+      left: 60%;
+    }
+
+    .fly-image:nth-child(6) {
+      top: 40%;
+      left: 10%;
+    }
+
+    .fly-image:nth-child(7) {
+      top: 60%;
+      left: 30%;
+    }
+
+    .fly-image:nth-child(8) {
+      top: 30%;
+      left: 40%;
+    }
+
+    /* Class to trigger fly-in */
+    .fly-in {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Eight images as per user request -->
+    <img src="figs/s1.png" alt="Image 1" class="fly-image">
+    <img src="figs/s2.png" alt="Image 2" class="fly-image">
+    <img src="figs/s3.png" alt="Image 3" class="fly-image">
+    <img src="figs/s4.png" alt="Image 4" class="fly-image">
+    <img src="figs/s5.png" alt="Image 5" class="fly-image">
+    <img src="figs/s6.png" alt="Image 6" class="fly-image">
+    <img src="figs/s7.png" alt="Image 7" class="fly-image">
+    <img src="figs/s8.png" alt="Image 8" class="fly-image">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.fly-image');
+      let currentIndex = 0; // To track which image to move next
+
+      // Define possible directions with their corresponding translate multipliers
+      const directions = [
+        { x: -10, y: 0 },    // Left
+        { x: 10, y: 0 },     // Right
+        { x: 0, y: -10 },    // Top
+        { x: 0, y: 10 },     // Bottom
+        { x: -10, y: -5 }, // Top-Left
+        { x: 0, y: 0 },  // Top-Right
+        { x: -10, y: 5 },  // Bottom-Left
+        { x: 5, y: 10 }    // Bottom-Right
+      ];
+
+      
+      // Store original positions and assigned directions to allow resetting
+      const imageData = [];
+
+      // Function to calculate and set initial off-screen position based on direction
+      function setInitialPosition(image, direction) {
+        // Apply initial transform to move the image off-screen
+        image.style.transform = `translate(${direction.x}px, ${direction.y}px)`;
+      }
+
+      // Assign random direction and set initial position for each image
+      images.forEach((image, index) => {
+        // Assign a random direction to each image
+        const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+        imageData.push({
+          originalLeft: parseFloat(window.getComputedStyle(image).left),
+          originalTop: parseFloat(window.getComputedStyle(image).top),
+          direction: randomDirection
+        });
+
+        // Set initial transform based on random direction to position off-screen
+        setInitialPosition(image, randomDirection);
+      });
+
+      // Function to fly in a single image
+      function flyInImage(index) {
+        if (index >= images.length || index < 0) {
+          // Out of bounds; do nothing
+          return;
+        }
+
+        const image = images[index];
+        image.classList.add('fly-in'); // Add class to trigger fly-in
+        currentIndex = index + 1; // Update currentIndex for next advancement
+      }
+
+      // Function to fly out a single image (reverse fly-in)
+      function flyOutImage(index) {
+        if (index >= images.length || index < 0) {
+          // Out of bounds; do nothing
+          return;
+        }
+
+        const image = images[index];
+        image.classList.remove('fly-in'); // Remove class to trigger fly-out
+        currentIndex = index; // Update currentIndex for next reverse advancement
+      }
+
+      // Event listener for left clicks to advance forward
+      document.addEventListener('click', (event) => {
+        // Ensure it's a left click (event.button === 0)
+        if (event.button === 0) {
+          if (currentIndex < images.length) {
+            flyInImage(currentIndex);
+          }
+        }
+      });
+
+      // Event listener for right clicks to advance backward
+      document.addEventListener('contextmenu', (event) => {
+        event.preventDefault(); // Prevent the context menu from appearing
+
+        // Determine the index to fly out
+        if (currentIndex > 0) {
+          flyOutImage(currentIndex - 1);
+        }
+      });
+
+      // Remove individual image click events
+      // (No need to remove since they are not added anymore)
+
+      // Adjust positions on window resize by resetting images
+      window.addEventListener('resize', () => {
+        // Optionally, reset all images on resize to ensure they are fully visible
+        // Alternatively, implement responsive adjustments as needed
+        // For simplicity, we'll reset all images
+        images.forEach((image, index) => {
+          image.classList.remove('fly-in'); // Remove fly-in class
+          setInitialPosition(image, imageData[index].direction); // Move back off-screen
+        });
+        currentIndex = 0; // Reset index
+      });
+    });
+  </script>
+</body>
+</html>
+```
+
+---
+
 # Overview
 
 1. Motivating EBM as a Workplace-Based Assessment
